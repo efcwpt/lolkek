@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <link rel="shortcut icon" href="media/sprite/icon.ico" type="image/x-icon">
+ <!--<link rel="stylesheet" type="text/css" href="css/normalize.css">-->
+ <link rel="stylesheet" type="text/css" href="css/style.css">
+ <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet"> 
+ <title>Night&Day</title>
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   
+    <main>
+        <div id="startCont">
+            <div class="character">
+                <label for="">Map selection:</label>
+              <select class="form-control" name="character" id="character">
+                <option value="Day">Day</option>
+                <option value="Night">Night</option>
+              </select>
+            </div>
+            <br>
+            <div class="nickname">
+              <label for="">Name:</label>
+              <input type="text" name="name" id="name">             
+            </div>
+            <br>
+             <div class="butStart">   
+              <button type="submit"  id="start">Go!</button>
+            </div>
+            </div>
+          </div>
+
+          <img id="Pers1" src="media/sprite/bg1.jpg" alt="" width="20%" >
+         <img id="Pers2" src="media/sprite/bg2.jpg" alt="" width="20%" >
+          
+    </main>
+    <div class="video"><video src="media/Clip/Miami Nights 1984.mp4" preload="auto" autoplay="true" loop="true" muted="muted"></video>
+    <p>Press Esc</p>
+    </div>
+    <canvas id="canvasBg" width="800px" height="600px"></canvas>
+    <canvas id="canvasTom" width="800px" height="600px"></canvas>
+    <canvas id="canvas" width="800px" height="600px"></canvas>
+    <canvas id="canvasDeath" width="800px" height="600px"></canvas>
+    <div id="time"></div>
+    <div id="death"> You're dead
+      <div id="top">see the Top-players</div>
+
+    </div>
+    <div id="xp"></div>
+    <div id="score"></div>
+    <div id="rating">
+      <table>
+        <tr>
+            <td>Player</td>
+            <td>Score</td>
+            <td>Time</td>
+        </tr>
+        <tr>
+            <td id="youName"></td>
+            <td id="youScore"></td>
+            <td id="youTime"></td>
+        </tr>
+        <tr>
+            <td>Player 2</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Player 3</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Player 4</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+    </div>
+ <script src="js/game.js"></script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+html{
+    padding: 0;
+    margin: 0;
+    overflow-y: hidden;
+}
+body{
+    background-image: url(../media/sprite/prewiew.jpg);
+    background-repeat: no-repeat;
+    font-family: 'Metal Mania', cursive;
+    font-size: 2em;
+}
+main{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+#startCont{
+    display: block;
+    background: rgba(109, 106, 106, 0.534);
+    border-radius: 15px;
+    padding: 20px;
+    margin-right: 6%;
+    margin-top: 7%;
+    color: white;
+}
+select  option {
+    font-family: 'Metal Mania', cursive;
+    font-size: 1em;
+}
+#start{
+    margin-left: 27%;
+    width: 50%;
+    height: 40px;
+    font-weight: 800;
+    font-size: large;
+    border-radius: 20px;
+    border: solid 1px white;
+    background-color: rgba(224, 211, 195, 0.349);
+    color: white;
+    font-family: 'Metal Mania', cursive;
+    font-size: 1em;
+  
+}
+#start:hover{
+    transition: 0.7s;
+    transform: scale(1.2);
+    box-shadow: -1px -1px 24px 10px rgba(255, 255, 255, 0.52);
+}
+#Pers1{
+  display: block;
+  position: absolute;
+  margin-right: 60%;
+  top: 40%;
+  
+}
+#Pers2{
+    display: block;
+    position: absolute;
+    margin-left: 48%;
+    top: 41%;
+}
+img{
+    border-radius: 5px;
+}
+img:hover{
+    transition: 0.7s;
+    transform: scale(1.2);
+    cursor: pointer;
+    box-shadow: -1px -1px 24px 10px rgba(255, 255, 255, 0.52);
+
+}
+.video{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+}
+.video p{
+    color: white;
+    position: absolute;
+    left: 40%;
+    top: 5%;
+    z-index: 99;
+    font-size: large;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    font-size: 1.5em;
+}
+#canvas{
+    display: none;
+    position: absolute;
+    left: 20%;
+}
+#canvasBg{
+    display: none;
+    position: absolute;
+    left: 20%;
+}
+#canvasTom{
+    display: none;
+    position: absolute;
+    left: 20%;
+    box-shadow: -1px -1px 24px 10px rgba(255, 255, 255, 0.52);
+}
+#canvasDeath{
+    display: none;
+    position: absolute;
+    left: 20%;
+    box-shadow: -1px -1px 24px 10px rgba(255, 255, 255, 0.52);
+}
+#time{
+    display: none;
+    color: white;
+    position: fixed;
+    top: 9.5%;
+    left: 22.1%;
+    font-weight: normal;
+    font-size: 40px;
+    font-family: 'Metal Mania', cursive;
+    
+}
+#death{
+    display: none;
+    color: rgb(107, 3, 3);
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+    text-shadow: -5px -2px rgb(0, 0, 0), -4px -1px #fff;
+    position: fixed;
+    top: 40%;
+    left: 36%;
+    font-weight: normal;
+    font-size: 70px;
+    font-family: 'Metal Mania', cursive;
+    
+}
+#top{
+    position: fixed;
+    color: white;
+    top: 50%;
+    left: 36%;
+    font-weight: normal;
+    font-size: 40px;
+    font-family: 'Metal Mania', cursive;
+
+}
+#top:hover{
+    transition: 0.7s;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+#xp{
+    display: none;
+    color: white;
+    position: fixed;
+    top: 2.5%;
+    left: 22.1%;
+    font-weight: normal;
+    font-size: 40px;
+    font-family: 'Metal Mania', cursive;
+}
+#score{
+    display: none;
+    color: white;
+    position: fixed;
+    top: 15.5%;
+    left: 22.1%;
+    font-weight: normal;
+    font-size: 40px;
+    font-family: 'Metal Mania', cursive;
+}
+#rating{
+    display: none;
+    position: absolute;
+    left: 29%;
+    top:30%;
+}
+table{
+    border: white solid 2px;
+    border-radius: 8px;
+    width: 210%;
+    border-spacing: 0px;
+    text-align: center;
+    box-shadow: -1px -1px 24px 10px rgba(255, 255, 255, 0.418);
+    background: rgba(252, 252, 252, 0.589);
+}
+tr{
+    border: white solid 1px;
+    width: 70px;
+    height: 40px;
+    border-radius: 8px;
+}
+td{
+    border: white solid 1px;
+    height: 30px;
+    width: 70px;
+    border-radius: 8px;
+}
+select {
+    display: block;
+    width: 100%; /* от ширины блока div */
+    padding: 5px;/* отступы от текста до рамки */
+    background: none; /* убираем фон */
+    border: 1px solid #ccc; /* рамка */
+    border-radius: 3px;/* скругление полей формы */
+    -webkit-appearance: none;/* Chrome */
+    -moz-appearance: none;/* Firefox */
+    appearance: none;/* убираем дефолнтные стрелочки */
+    font-family: inherit;/* наследует от родителя */
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+select:focus {
+    outline-style: none;
+    outline-width: 0px !important;
+    outline-color: none !important;
+}
+select:after {
+    content: "";
+    display: block;
+    border-style: solid;
+    border-width: 6px 5px 0 5px;
+    border-color: #000 transparent transparent transparent;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    z-index: 1;
+    margin-top: -3px;
+    cursor: pointer;
+}
+input{
+    font-family: inherit;
+    font-size: 25px;
+}
