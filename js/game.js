@@ -18,20 +18,22 @@ $(document).ready(function() {
 });
 
 //Выбор карты
-let a = 1;
+let a = 1; // Индикатор
 $('select').click(function(){
-	let value = $('select').val();
+  let value = $('select').val();
+  
 	if (value == 'Day'){
     $('#Pers1').css('display','block');
     $('#Pers2').css('display','none');
-    let a = 1;
+    a = 1;
   }
   if (value == 'Night'){
     $('#Pers2').css('display','block');
     $('#Pers1').css('display','none');
-    let a = 2;
+    a = 2;
   }
 });
+
 
 
 //Автозапуск видео ЗВУК НЕ РАБОТАТ ИЗ ЗА ПОЛИТИКИ БРАУЗЕРОВ
@@ -55,29 +57,6 @@ $('select').click(function(){
     });
 
     
-/* НАЧАЛО ИГРЫ ПО НАЖАТИЮ НЕ РАБОТАЕТ
-let gameStart = false;
-
-$(document).keyup(function(e) {
-    
-      gameStart = true;
-    
-  });
-
-  if (gameStart){
-    window.onload = draw;
-} 
-*/
-
-///////////////////////////////////
-
-
-
-
-
-
-
-
 //////////////////////////////////////////////
 
 
@@ -95,25 +74,22 @@ let ctxTom = cvsTom.getContext("2d");
 let cvsDeath = document.getElementById("canvasDeath");
 let ctxDeath = cvsDeath.getContext("2d");
 
-let bg = new Image();
+let bg1 = new Image();
+let bg2 = new Image();
 let heroImg = new Image();
 let tomImg = new Image();
 let cheeseImg = new Image();
 let platImg = new Image();
 let bgDeath = new Image();
 
-if (a == 1){
-    bg.src = "./media/sprite/bg1.jpg";
-}
-if (a == 2){
-    bg.src = "./media/sprite/bg2.jpg";
-}
 
 tomImg.src = "./media/cartoon_img_075.png";
 heroImg.src = "./media/tom_and_jerry_PNG2.png";
-cheeseImg.src = "./media/sprite/image-removebg-preview.png";
 platImg.src = "./media/sprite/plat.jpg";
 bgDeath.src = "./media/sprite/bgDeath.jpg";
+bg1.src = "./media/sprite/bg1.jpg";
+bg2.src = "./media/sprite/bg2.jpg";
+cheeseImg.src = "./media/sprite/image-removebg-preview.png";
 
 let music = new Audio(); 
 music.src = "./media/fonovaya-muzyka-fon-dlya-igr-bystraya-muzyka.mp3";
@@ -140,11 +116,10 @@ let hero = {
 
       //прыжок
     moveUp() {
-        let allowed;// НЕ РАБОТАЕТ И НЕ ВЛИЯЕТ
-        if (hero.moveUp.repeat != undefined) {
-            allowed = !hero.moveUp.repeat;}
-        hero.y -= 270;
+        if (hero.y > 400){
+        hero.y -= 250;
         hero.x -= 10; //Math.sqrt(1 - Math.pow(x - 1, 2));
+        }
     },
 
     gravitation() { // гравитация
@@ -296,11 +271,16 @@ let cheese = {
    
  
 // Не работат из за политики браузера
- music.play();
+ //music.play();
 
 
 function draw() {  
-    ctxBg.drawImage(bg, 0, 0);
+    
+    if (a == 1){
+      ctxBg.drawImage(bg1, 0, 0);}
+      if (a == 2){
+        ctxBg.drawImage(bg2, 0, 0);} 
+
     ctxBg.drawImage(cheeseImg, cheese.x, cheese.y);
     ctxBg.drawImage(platImg, 0, 543);
     ctxBg.drawImage(platImg, 400, 543);
@@ -313,32 +293,12 @@ function draw() {
     death();
     hero.attacing();
     requestAnimationFrame(draw);
-    //cancelAnimationFrame(draw);// ?????????????????????///
-    /*function loop() {
-        if (hero.xp > 0) { start();
-        }
-        else stop();
-    }
-    
-    function start() {
-        
-           requestId = window.requestAnimationFrame(draw);
-       
-    }
-    
-    function stop() {
-        
-           window.cancelAnimationFrame(draw);
-           
-       
-    }
-    loop();*/
 }
 
-tomImg.onload = draw;
+onload = draw;
 
-setInterval(hero.animation,2000);
-setInterval(tom.animation,2000);
+setInterval(hero.animation,3000);
+setInterval(tom.animation,3000);
 //hero.animation();
 //tom.animation();
 

@@ -211,17 +211,13 @@ select {
     color: rgb(255, 255, 255);
     cursor: pointer;
 }
-select:focus {
-    outline-style: none;
-    outline-width: 0px !important;
-    outline-color: none !important;
-}
+
 select:after {
     content: "";
     display: block;
     border-style: solid;
     border-width: 6px 5px 0 5px;
-    border-color: #000 transparent transparent transparent;
+    border-color: #000 transparent;
     pointer-events: none;
     position: absolute;
     top: 50%;
